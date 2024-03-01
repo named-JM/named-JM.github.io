@@ -29,20 +29,46 @@ align-items:center;
   }
   .parallax-text {
     align-items: center;
-    margin-left: 100px;
     font-size: 5rem;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds a subtle shadow to text */
-    opacity: 0.5; /* Optional: Adjust the opacity to your preference */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+   
+  }
+
+  .parallax-text h3 {
+    font-size: 1.5rem;
+    color: white;
+    opacity: 0.7;
   }
   
-  .about-section{
+  @media (max-width: 768px) {
+    .parallax-text {
+      text-align: center;
+    }
   
+    .parallax-text h3 {
+      text-align: center;
+    }
+  }
+  
+  .about-section h1, h3 {
+    margin: 0; /* Add this line to remove default margin */
+    padding-top: 20px;
+    padding-left: 20px;
+    color: white;
+  }
+  
+  .about-section {
+    color: white;
+    margin: 0;
+    padding: 0;
     background-color: black;
     height: 90vh;
   }
+  
 
   .project-section {
     height: 90vh;
     background-color: bisque;
   }
+
