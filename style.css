@@ -1,74 +1,61 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  
-  .parallax-container {
-    /* background-image: url("https://marketplace.canva.com/EAFCO6pfthY/1/0/1600w/canva-blue-green-watercolor-linktree-background-F2CyNS5sQdM.jpg");Replace 'background.jpg' with your image */
-    background-color: brown;
-    background-size: cover;
-    background-repeat: repeat;
-    background-attachment: fixed;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-align-items:center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
+.parallax-container {
+  background-color: brown;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Added to stack elements vertically */
+}
 
-  }
-  .parallax-image-right-image{
-    margin-left: 200px;
-    right: 0;
-    
-  }
-  .parallax-image-left-image{
-    left: 0;
-    
-  }
-  .parallax-text {
-    align-items: center;
-    font-size: 5rem;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-   
-  }
+.parallax-image-right-image {
+  margin-top: 20px; 
+}
 
-  .parallax-text h3 {
-    font-size: 1.5rem;
-    color: white;
-    opacity: 0.7;
-  }
-  
-  @media (max-width: 768px) {
-    .parallax-text {
-      text-align: center;
-    }
-  
-    .parallax-text h3 {
-      text-align: center;
-    }
-  }
-  
-  .about-section h1, h3 {
-    margin: 0; /* Add this line to remove default margin */
-    padding-top: 20px;
-    padding-left: 20px;
-    color: white;
-  }
-  
-  .about-section {
-    color: white;
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    height: 90vh;
-  }
-  
+.parallax-text h1,
+.parallax-text h3 {
+  text-align: left; 
+}
 
-  .project-section {
-    height: 90vh;
-    background-color: bisque;
-  }
+.parallax-text h1 {
+  font-size: 5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
+.parallax-text h3 {
+  margin-top: -50px;
+  font-size: 1.5rem;
+  color: white;
+  opacity: 0.7;
+}
+
+.about-section h1,
+.about-section h3 {
+  margin: 0;
+  padding-top: 20px;
+  padding-left: 20px;
+  color: white;
+}
+
+.about-section {
+  color: white;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  height: 90vh;
+}
+
+.project-section {
+  height: 90vh;
+  background-color: bisque;
+}
