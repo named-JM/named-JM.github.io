@@ -1,74 +1,67 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  
-  .parallax-container {
-    /* background-image: url("https://marketplace.canva.com/EAFCO6pfthY/1/0/1600w/canva-blue-green-watercolor-linktree-background-F2CyNS5sQdM.jpg");Replace 'background.jpg' with your image */
-    background-color: brown;
-    background-size: cover;
-    background-repeat: repeat;
-    background-attachment: fixed;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-align-items:center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none; /*this line is for the underline links will go bye*/
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
 
-  }
-  .parallax-image-right-image{
-    margin-left: 200px;
-    right: 0;
-    
-  }
-  .parallax-image-left-image{
-    left: 0;
-    
-  }
-  .parallax-text {
-    align-items: center;
-    font-size: 5rem;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-   
-  }
+:root {
+  --bg-color: #2a2a2a;
+  --second-bg-color: #161616;
+  --text-color: #fff;
+  --main-color: #ff8888;
+}
 
-  .parallax-text h3 {
-    font-size: 1.5rem;
-    color: white;
-    opacity: 0.7;
-  }
-  
-  @media (max-width: 768px) {
-    .parallax-text {
-      text-align: center;
-    }
-  
-    .parallax-text h3 {
-      text-align: center;
-    }
-  }
-  
-  .about-section h1, h3 {
-    margin: 0; /* Add this line to remove default margin */
-    padding-top: 20px;
-    padding-left: 20px;
-    color: white;
-  }
-  
-  .about-section {
-    color: white;
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    height: 90vh;
-  }
-  
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
 
-  .project-section {
-    height: 90vh;
-    background-color: bisque;
-  }
+body{
+  background: var(--bg-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+}
+html::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+html::-webkit-scrollbar-thumb{
+  background: var(--main-color);
+}
 
+/*basically the navbar itself*/
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 9%;
+  background: rgba(0, 0, 0, 0.7); /*bg of the navbar*/
+  filter: drop-shadow(10px);
+  display: flex; /*para maging horizontal na*/
+  justify-content: space-between;/*dito naman para magkaspace nung pinahiga na*/
+  align-items: center; /*dipantay, kaya ginawang center ung mga nasa navbar words*/
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 9%;
+  background: rgba(0, 0, 0, 0.7);
+  filter: drop-shadow(10px);
+  display: flex; /*para maging horizontal na*/
+  /* justify-content: space-between;/*dito naman para magkaspace nung pinahiga na*/
+  /* align-items: center;
+  z-index: 100; */ 
+} 
+
+.logo {
+  font-size: 3rem;
+  color: var(--main-color);
+  font-weight: 800;
+}
