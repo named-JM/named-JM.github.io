@@ -227,7 +227,168 @@ html::-webkit-scrollbar-thumb{
   .home-content h1{
     font-size: 5rem;
   }
-  .home-img{
-    padding-top: 5rem;
+  .home-img {
+    padding-top: 10rem;
+  }
+  .home-img img {
+    width: 40vw;
   }
 }
+
+/* Servie / My experience section */
+
+.services {
+  background-color: var(--second-bg-color);
+
+}
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  align-items: center;
+  gap: 2.5rem;
+}
+.service-box{
+  background-color: var(--main-color);
+  height: 250px;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: 0.5s ease;
+
+}
+.service-box:hover{
+  background: transparent;
+  color: var(--text-color);
+  transform: scale(1.05);
+}
+
+.service-box .service-info{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  max-height: 200px;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+.service-info h4 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.service-info p{
+  font-size: 1.6rem;
+  font-weight: 400;
+  max-height: 100px;
+  margin: auto;
+}
+/* .desktop {
+  position: absolute;
+}
+
+.desktop .text-wrapper {
+
+  font-family: "Inter-Black", Helvetica;
+  font-weight: 900;
+  color: #eeeeee;
+  font-size: 60px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .group {
+  height: 218px;
+  position: relative;
+  width: 761px;
+
+}
+
+.desktop .div {
+  position: absolute;
+  width: 755px;
+  top: 0;
+  left: 0;
+  font-family: "Inter-Black", Helvetica;
+  font-weight: 900;
+  color: #000000;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .p {
+  position: absolute;
+  width: 755px;
+  top: 44px;
+  left: 0;
+  font-family: "Inter-Black", Helvetica;
+  font-weight: 900;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .text-wrapper-2 {
+  position: absolute;
+  width: 622px;
+  top: 73px;
+  left: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .group-2 {
+  height: 160px;
+  top: 739px;
+  position: absolute;
+  width: 761px;
+  left: 128px;
+}
+
+.desktop .text-wrapper-3 {
+  position: absolute;
+  width: 755px;
+  top: 544px;
+  left: 624px;
+  font-family: "Inter-Black", Helvetica;
+  font-weight: 900;
+  color: #000000;
+  font-size: 36px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .text-wrapper-4 {
+  position: absolute;
+  width: 755px;
+  top: 588px;
+  left: 624px;
+  font-family: "Inter-Black", Helvetica;
+  font-weight: 900;
+  color: #000000;
+  font-size: 24px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .managed-printing {
+  position: absolute;
+  width: 629px;
+  top: 617px;
+  left: 750px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 24px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+} */
