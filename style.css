@@ -402,11 +402,11 @@ html::-webkit-scrollbar-thumb{
 }
 
 .education .container{
-  padding: 15px 20px;
+
+  padding: 19px 40px;
   width: 50%;
   position: relative;
   background-color: inherit;
-  background: pink;
 }
 
 .education .container::after{
@@ -445,7 +445,7 @@ html::-webkit-scrollbar-thumb{
   top: 22px;
   width: 0;
   z-index: 1;
-  right: 30px;
+  right: 31px;
   border: medium solid var(--main-color);
   border-width: 10px 0 10px 10px;
   border-color: transparent transparent transparent var(--main-color);
@@ -458,7 +458,7 @@ html::-webkit-scrollbar-thumb{
   top: 22px;
   width: 0;
   z-index: 1;
-  left: 30px;
+  left: 31px;
   border: medium solid var(--main-color);
   border-width: 10px 10px 10px 0px;
   border-color: transparent var(--main-color) transparent transparent;
@@ -497,8 +497,44 @@ html::-webkit-scrollbar-thumb{
 
 }
 
-@media screen and (max-wd){
+@media screen and (max-width: 600px){
+  .education .timeline {
+    margin-top: 5rem;
+  }
+  .education .timeline::after{
+    left: 25px;
+  }
+  .education .container{
+    width: 100%;
+    padding-left: 8rem;
+    padding-right: 2rem;
+  }
+  .education .container::after{
+    left: 15px;
+    width: 25px;
+    height: 25px;
+    
+  }
+  .education .left::before{
+    left: 71px;
+    border: medium solid var(--main-color);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--main-color) transparent transparent;
+  }
+  .education .right::before{
+    left: 71px;
+    border: medium solid var(--main-color);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--main-color) transparent transparent;
+  }
   
+  .education .left::after{
+    left: 15px;
+    
+  }
+  .education .right{
+    left: 0%;
+  }
 }
 /* .desktop {
   position: absolute;
