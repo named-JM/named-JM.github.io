@@ -309,7 +309,11 @@ html::-webkit-scrollbar-thumb{
   background: var(--bg-color);
 
 }
-
+.skills h2{
+  font-size: 4rem;
+  justify-content: center;
+  display: flex;
+}
 .skills .container{
   background: gray;
   color: var(--text-color);
@@ -337,6 +341,7 @@ html::-webkit-scrollbar-thumb{
 
 .skills .container .bar:hover {
   box-shadow: 0 4px 10px yellow;
+  cursor: pointer;
 }
 .skills .container .bar .info {
   display: flex;
@@ -374,7 +379,127 @@ html::-webkit-scrollbar-thumb{
   
 }
 
+/* EDUCSTION AND EXPERIENCE */
+.education {
+  background: var(--second-bg-color);
+  
+}
+.education .timeline{
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+/* the pole like in center */
+.education .timeline::after{
+  content: '';
+  position: absolute;
+  width: 6px;
+  background: rgb(90, 64, 64);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+}
+
+.education .container{
+  padding: 15px 20px;
+  width: 50%;
+  position: relative;
+  background-color: inherit;
+  background: pink;
+}
+
+.education .container::after{
+  content: '\f501';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -15px;
+  line-height: 25px;
+  border: 2px solid var(--main-color);
+  background-color: rgb(252, 252, 252);
+  border-radius: 50%;
+  z-index: 100; /*ohh so zindex to make this layer go forward??*/
+  font-size: 1.50rem;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Font Awesome\ 5 Free";
+  color: black;
+  top: 15px;
+  color: var(--main-color)
+  
+}
+
+.education .left{
+  left: 0;
+}
+
+.education .right{
+  left: 50%;
+}
+
+.education .left::before{
+  content: '';
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid var(--main-color);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--main-color);
+}
+
+.education .right::before{
+  content: '';
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid var(--main-color);
+  border-width: 10px 10px 10px 0px;
+  border-color: transparent var(--main-color) transparent transparent;
+}
+.education .right::after{
+  left: -16px;
+}
+
+.education .content{
+  background-color: var(--main-color);
+  position: relative;
+  border-radius: 6px;
+
+}
+
+.education .content .tag {
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+}
+.education .content .decs{
+  margin-left: 1.5rem;
+  padding-bottom: 1rem;
+
+}
+
+.education .content .decs h3{
+  font-size: 1.5rem;
+  font-weight: 600;
+
+}
+
+.education .content .decs p{
+  font-size: 1.3rem;
+  font-weight: 500rem;
+
+}
+
+@media screen and (max-wd){
+  
+}
 /* .desktop {
   position: absolute;
 }
