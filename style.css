@@ -236,11 +236,11 @@ html::-webkit-scrollbar-thumb{
 }
 
 /* Servie / My experience section */
-
 .services {
   background-color: var(--second-bg-color);
 
 }
+
 .service-container {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -249,7 +249,7 @@ html::-webkit-scrollbar-thumb{
 }
 .service-box{
   background-color: var(--main-color);
-  height: 250px;
+  height: 300px;
   border-radius: 3rem;
   cursor: pointer;
   transition: 0.5s ease;
@@ -259,6 +259,7 @@ html::-webkit-scrollbar-thumb{
   background: transparent;
   color: var(--text-color);
   transform: scale(1.05);
+  border: 1px solid var(--main-color);
 }
 
 .service-box .service-info{
@@ -270,7 +271,12 @@ html::-webkit-scrollbar-thumb{
   align-items: center;
   padding: 5rem;
 }
-
+.services h2 {
+  justify-content: center;
+  display: flex;
+  padding-bottom: 5rem;
+  font-size: 4rem;
+}
 .service-info h4 {
   font-size: 2.5rem;
   font-weight: 500;
@@ -282,6 +288,71 @@ html::-webkit-scrollbar-thumb{
   max-height: 100px;
   margin: auto;
 }
+@media (max-width: 991px){
+  .section{
+    padding: 10rem 3% 2rem;
+
+  }
+  .service{
+    padding-bottom: 7rem;
+  }
+}
+/* para maging responsive ung mga grid boxes into one */
+@media (max-width:895px){
+  .service-container{
+    grid-template-columns: repeat(1,1fr);
+  }
+}
+
+/* Skills section */
+.skills {
+  background: var(--bg-color);
+
+}
+
+.skills .container{
+  background: gray;
+  color: var(--text-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 70%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.skills .container .row {
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  flex-wrap: wrap;
+  gap: 1.8rem;
+}
+
+.skills .container .bar {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 4px 10px var(--main-color);
+  transition: 0.3s ease;
+}
+
+.skills .container .bar:hover {
+  box-shadow: 0 4px 10px yellow;
+}
+.skills .container .bar .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skills .container .bar .info span{
+  font-size: 2rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
 /* .desktop {
   position: absolute;
 }
