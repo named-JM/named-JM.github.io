@@ -322,13 +322,12 @@ html::-webkit-scrollbar-thumb{
 
 .skills .container .row {
   display: grid;
-  grid-template-columns: repeat(6,1fr);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   flex-wrap: wrap;
   gap: 1.8rem;
 }
 
 .skills .container .bar {
-  margin-bottom: 15px;
   padding: 10px;
   border-radius: 1rem;
   background: white;
@@ -343,7 +342,7 @@ html::-webkit-scrollbar-thumb{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+
   margin-top: 1rem;
 }
 
@@ -352,6 +351,29 @@ html::-webkit-scrollbar-thumb{
   font-weight: 500;
   margin-left: 0.5rem;
 }
+.skills .container .bar .info img {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width:600px) {
+  .skills .container {
+    margin: 0;
+    padding: 0;
+  }
+  .skills .container .row{
+    grid-template-columns: repeat(auto-fit, minmax(2, 1fr));
+    margin: 1rem;
+    padding: 2rem 0.2rem 2rem 0.2rem;
+
+  }
+  .skills .container {
+    margin-top: 5px;
+    width: 100%; /*max width ng screen to make the container max it too*/
+  }
+  
+}
+
 
 /* .desktop {
   position: absolute;
