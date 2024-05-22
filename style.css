@@ -100,7 +100,7 @@ html::-webkit-scrollbar-thumb{
     padding: 3rem 3%;
     background-color: var(--second-bg-color);
     border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
-    /*display: none; /*no show default coz clicking hamburger will untrue this*/
+    display: none; /*no show default coz clicking hamburger will untrue this*/
   }
   .navbar.active{
     display: block;
@@ -305,9 +305,11 @@ html::-webkit-scrollbar-thumb{
 }
 
 /* Skills section */
+
+
 .skills {
   background: var(--bg-color);
-
+  min-height: 50vh;
 }
 .skills h2{
   font-size: 4rem;
