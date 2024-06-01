@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
   </head>
   <body>
     <!-- logo,navbar, burger -->
@@ -27,77 +28,85 @@
 
       <!--Home Me Contents-->
       <div class="home-img">
-        <img src="jm.JPG" alt="JM Picture" >
+        <img src="assets/pictures_works/jm.JPG" alt="JM Picture" >
       </div>
       <div class="home-content">
         <h1>Hello! My name's <span>JM!</span></h1>
         <h3 class="typing-text">I'm a <span>Computer Science Student</span> and currently a <span>Layout Artist</span></h3>
-        <p>with a wide array of skills and interest. From designing, editing, coding and troubleshooting, I love diving into different aspects of technology.</p>
+        <p>with a wide array of skills and interest. From designing, building, coding and troubleshooting, <br>I love diving into different aspects of technology.</p>
         <p>I'm particularly passionate about tech industry, media industry, gaming industry</p>
       
       
-      <div class="socials">
-        <a href="https://www.facebook.com/JM.cags" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-        <a href="https://www.linkedin.com/in/joannacaguco/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/named-JM" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-        <a href="https://twitter.com/JMappear/media" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+      <div class="socials" id="icons">
+        <a href="https://www.facebook.com/JM.cags" ><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/joannacaguco/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/named-JM"><i class="fa-brands fa-square-github"></i></a>
+        <a href="https://twitter.com/JMappear/media"><i class="fa-brands fa-square-x-twitter"></i></a>
       </div>
 
       <a href="#" class="btn">joannacaguco@gmail.com</a>
     </section>
 
+    
     <!-- works -->
+    
     <section class="services" id="services">
       <h2 class="heading">Works</h2>
       <div class="service-container">
-        <a href="https://github.com/named-JM/Genshin-Lyre-" target="_blank">
+
+        <a href="works pages/flutter-projects.html" target="_blank">
         <div class="service-box">
-          <img src="jm.JPG" alt="">
+          <img src="assets/pictures_works/LyreMobile.png" alt="">
           <div class="overlay">
-            <h1>Flutter Dart Projects </h1>
+            <h1>Genshin Impact Game Lyre Clone</h1>
             <p>Genshin Impact Lyre Feature Clone using Flutter</p>
           </div>
         </div>
       </a>
         <!-- 2nd column -->
-        <a href="" target="_blank">
+        <a href="https://github.com/named-JM/JARKING" target="_blank">
         <div class="service-box">
-          <img src="" alt="">
+          <img src="assets/pictures_works/Jarking.gif" alt="">
           <div class="overlay">
-            <h1>PubMats Designs</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati sed nisi quasi atque. Nostrum cumque perferendis dolore iste, minus nulla?</p>
+            <h1>JarKing Mobile Application</h1>
+            <p>A Flutter Mobile Project that contains Login/SignUp Authy(Firebase), Games, Apps, Music, and CRUD(1) </p>
           </div>
         </div>
       </a>
 
         <!-- 3rd colum -->
+        <a href="https://github.com/named-JM/Quote-Generator-API-Simple" target="_blank">
+        <div class="service-box">
+          <img src="assets/pictures_works/apigenerator.png" alt="">
+          <div class="overlay">
+            <h1>Qoute Generator with API</h1>
+            <p>A Simple Webpage that generates quotes with Rapid API</p>
+          </div>
+        </div>
+        </a>
+        <!-- 2nd row 1st column -->
+        <a href="">
         <div class="service-box">
           <img src="" alt="">
           <div class="overlay">
-            <h1>Video Edits</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor temporibus culpa inventore enim? Dolore fugit quae assumenda fugiat, accusamus qui provident dignissimos rerum debitis soluta sunt, illum, delectus impedit facere!</p>
+            <h1>PubMats Designs</h1>
+            <p>My works with my publication org. and my personal works</p>
           </div>
         </div>
-        <!-- 2nd row 1st column -->
+        </a>
+        <!-- 2nd row 2nd column -->
         <div class="service-box">
           <img src="" alt="">
           <div class="overlay">
             <h1>Certificates</h1>
-            <p>grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));</p>
-          </div>
-        </div>
-        <div class="service-box">
-          <img src="" alt="">
-          <div class="overlay">
-            <h1>Java Projects</h1>
-            <p>grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));</p>
+            <p>My Learnings and Attending Community Tech Related</p>
           </div>
         </div>
         <div class="service-box">
           <img src="" alt="">
           <div class="overlay">
             <h1>Other Projects</h1>
-            <p>grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));</p>
+            <p>My personal learning projects with JAVA, PHP/MYSQL, ANDROID STUDIO</p>
           </div>
         </div>
       </div>
@@ -342,5 +351,7 @@
     </footer>
   </div>
     <script src="new.js"></script>
+    <script src="https://tools.refokus.com/slider-generator/bundle.v1.0.0.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </body>
   </html>

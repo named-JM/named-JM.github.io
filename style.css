@@ -70,6 +70,33 @@ html::-webkit-scrollbar-thumb{
   border-bottom: 3px solid transparent;
 }
 
+
+.myportfolio-mypicture {
+  top: 278px;
+  right: 200px;
+  width: 432px;
+  height: 439px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.myportfolio-ellipse1 {
+  top: 0px;
+  right: 0px;
+  width: 432px;
+  height: 439px;
+  position: absolute;
+}
+.myportfolio-jm {
+  top: 50px;
+  right: 44px;
+  width: 343px;
+  height: 341px;
+  position: absolute;
+  border-radius: 186px;
+}
+
 .navbar a:hover, .navbar a:active {
   color: var(--main-color); /*when hover maiiba color ng text sa navbar*/
   border-bottom: 3px solid var(--main-color); /*some underline color hover */
@@ -186,11 +213,15 @@ html::-webkit-scrollbar-thumb{
     transition: 1s ease
 
   }
-  .socials a:hover{
+  #icons:hover {
+    color: yellow;
+  }
+  
+  /* .socials a:hover{
     color: white;
     transform: scale(1.3)translateY(-5px);
 
-  }
+  } */
   .btn{
     display: block;
     padding: 1rem -0.8rem;
@@ -254,7 +285,7 @@ html::-webkit-scrollbar-thumb{
 }
 .service-box {
   background-color: var(--main-color);
-  height: 300px;
+  height: 450px;
   border-radius: 3rem;
   cursor: pointer;
   transition: 0.5s ease;
@@ -685,4 +716,55 @@ html::-webkit-scrollbar-thumb{
   .footer {
     padding: 2rem 3%;
   }
+}
+
+
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  border-radius: 50%;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+.carousel-control:focus {
+  outline: none;
 }
