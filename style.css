@@ -187,7 +187,7 @@ html::-webkit-scrollbar-thumb{
     border-radius: 50%;
     width: 28vw;
     position: relative;
-    box-shadow: 10px 8px 10px rgba(96, 96, 96, 0.642);
+    box-shadow: 5px 10px 10px rgba(81, 81, 81, 0.294);
     filter: drop-shadow(-10px -15px 10px rgb(255, 255, 255));
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
@@ -414,6 +414,13 @@ html::-webkit-scrollbar-thumb{
   justify-content: center;
   display: flex;
 }
+
+.skills p {
+  font-size: 1rem;
+  justify-content: center;
+  display: flex;
+  font-style: italic;
+}
 .skills .container{
   background: gray;
   color: var(--text-color);
@@ -502,7 +509,7 @@ html::-webkit-scrollbar-thumb{
   content: '';
   position: absolute;
   width: 6px;
-  background: rgb(90, 64, 64);
+  background: rgb(255, 255, 255);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -553,9 +560,9 @@ html::-webkit-scrollbar-thumb{
   width: 0;
   z-index: 1;
   right: 31px;
-  border: medium solid var(--main-color);
+  border: medium solid white;
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent var(--main-color);
+  border-color: transparent transparent transparent white;
 }
 
 .education .right::before{
@@ -566,16 +573,16 @@ html::-webkit-scrollbar-thumb{
   width: 0;
   z-index: 1;
   left: 31px;
-  border: medium solid var(--main-color);
+  border: medium solid white;
   border-width: 10px 10px 10px 0px;
-  border-color: transparent var(--main-color) transparent transparent;
+  border-color: transparent white transparent transparent;
 }
 .education .right::after{
   left: -16px;
 }
 
 .education .content{
-  background-color: var(--main-color);
+  background-color: white;
   position: relative;
   border-radius: 6px;
 
@@ -651,7 +658,7 @@ html::-webkit-scrollbar-thumb{
   bottom: 0;
   width: 100%;
   padding: 40px 0;
-  background-color: var(--main-color);
+  background-color: white;
 }
 .footer .social{
   text-align: center;
@@ -675,8 +682,9 @@ html::-webkit-scrollbar-thumb{
 
 .footer .social a:hover{
   transform: scale(1.2)translateY(-5px);
-  background: black;
-  color: var(--main-color);
+  background: var(--main-color);
+  color: white;
+  border: #8587f5;
 }
 
 .footer ul {
