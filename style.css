@@ -422,7 +422,7 @@ html::-webkit-scrollbar-thumb{
   font-style: italic;
 }
 .skills .container{
-  background: gray;
+  background: white;
   color: var(--text-color);
   border-radius: 1rem;
   padding: 2rem;
@@ -448,6 +448,7 @@ html::-webkit-scrollbar-thumb{
 
 .skills .container .bar:hover {
   box-shadow: 0 4px 10px white;
+  animation-delay: 1s;
   cursor: pointer;
 }
 .skills .container .bar .info {
