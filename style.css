@@ -356,7 +356,8 @@ html::-webkit-scrollbar-thumb{
 
 /* Servie / My experience section */
 .services {
-  background-color: var(--second-bg-color);
+  
+  background: var(--bg-color);
 
 }
 
@@ -470,8 +471,10 @@ html::-webkit-scrollbar-thumb{
 /* Skills section */
 
 
+
+
 .skills {
-  background: var(--bg-color);
+  background-color: var(--second-bg-color);
   min-height: 50vh;
 }
 .skills h2{
@@ -486,7 +489,7 @@ html::-webkit-scrollbar-thumb{
   display: flex;
   font-style: italic;
 }
-.skills .container{
+/* .skills .container{
   background: white;
   color: var(--text-color);
   border-radius: 1rem;
@@ -494,7 +497,7 @@ html::-webkit-scrollbar-thumb{
   width: 70%;
   margin: auto;
   margin-top: 2rem;
-}
+} */
 
 .skills .container .row {
   display: grid;
@@ -507,7 +510,8 @@ html::-webkit-scrollbar-thumb{
   padding: 10px;
   border-radius: 1rem;
   background: white;
-  box-shadow: 0 4px 10px var(--main-color);
+  /* box-shadow: 0 4px 10px var(--main-color); */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.248);
   transition: 0.3s ease;
 }
 
@@ -534,23 +538,6 @@ html::-webkit-scrollbar-thumb{
   height: 30px;
 }
 
-@media screen and (max-width:600px) {
-  .skills .container {
-    margin: 0;
-    padding: 0;
-  }
-  .skills .container .row{
-    grid-template-columns: repeat(auto-fit, minmax(2, 1fr));
-    margin: 1rem;
-    padding: 2rem 0.2rem 2rem 0.2rem;
-
-  }
-  .skills .container {
-    margin-top: 5px;
-    width: 100%; /*max width ng screen to make the container max it too*/
-  }
-  
-}
 
 .skill-category {
   background-color: #fff;
@@ -574,6 +561,25 @@ html::-webkit-scrollbar-thumb{
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1.5rem;
 }
+
+
+@media screen and (max-width:600px) {
+  .skills .container {
+    margin: 0;
+    padding: 0;
+  }
+  .skills .container .row{
+    grid-template-columns: repeat(auto-fit, minmax(2, 1fr));
+    margin: 1rem;
+    padding: 2rem 0.2rem 2rem 0.2rem;
+
+  }
+  .skills .container {
+    margin-top: 5px;
+    width: 100%; /*max width ng screen to make the container max it too*/
+  }
+  
+}    
 
 
 /* EDUCSTION AND EXPERIENCE */
