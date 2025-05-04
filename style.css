@@ -470,9 +470,6 @@ html::-webkit-scrollbar-thumb{
 
 /* Skills section */
 
-
-
-
 .skills {
   background-color: var(--second-bg-color);
   min-height: 50vh;
@@ -489,57 +486,53 @@ html::-webkit-scrollbar-thumb{
   display: flex;
   font-style: italic;
 }
-/* .skills .container{
-  background: white;
-  color: var(--text-color);
-  border-radius: 1rem;
-  padding: 2rem;
-  width: 70%;
-  margin: auto;
-  margin-top: 2rem;
-} */
-
-.skills .container .row {
+.skills .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  flex-wrap: wrap;
-  gap: 1.8rem;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 2rem;
 }
+
+/* Make it responsive (1 column on smaller screens) */
+@media screen and (max-width: 768px) {
+  .skills .container {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .skills .container .bar {
-  padding: 10px;
-  border-radius: 1rem;
-  background: white;
-  /* box-shadow: 0 4px 10px var(--main-color); */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.248);
-  transition: 0.3s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.skills .container .bar:hover {
-  box-shadow: 0 4px 10px white;
-  animation-delay: 1s;
-  cursor: pointer;
-}
 .skills .container .bar .info {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin-top: 1rem;
+  justify-content: center;
+  
 }
 
+
+.skills .container .bar .info i {
+  font-size: 5.5rem;
+  color: black; /* or white */
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* text skills (python etc.. */
 .skills .container .bar .info span{
   font-size: 2rem;
   font-weight: 500;
   margin-left: 0.5rem;
 }
-.skills .container .bar .info img {
-  width: 30px;
-  height: 30px;
-}
 
 
 .skill-category {
+  
   background-color: #fff;
   padding: 2rem;
   margin-bottom: 3rem;
