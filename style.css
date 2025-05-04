@@ -149,6 +149,52 @@ html::-webkit-scrollbar-thumb{
 
   }
 
+  .like-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    margin: 0 auto;
+    width: 100%; /* Take 90% of the screen width */
+    max-width: 2040px; /* But never go beyond 1400px on large screens */
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: 70vh; /* Fill at least 70% of the screen height */
+    height: auto;     /* Let it grow if content exceeds 70% */
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    transition: all 0.3s ease;
+  }
+  .like-box {
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  .like-box .home-img img {
+    border-radius: 50%;
+    max-width: 300px;
+    height: auto;
+  }
+  
+  .like-box .home-content {
+    flex: 1;
+    min-width: 300px;
+    padding-left: 5rem;
+  }
+  
+
   section{
     min-height: 100vh;
     padding: 5rem 9% 5rem;
@@ -162,6 +208,7 @@ html::-webkit-scrollbar-thumb{
     background: var(--bg-color);
     z-index: 10;
   }
+  
   .home-content h1 {
     font-size: 6rem;
     font-weight: 700;
@@ -288,6 +335,24 @@ html::-webkit-scrollbar-thumb{
     width: 40vw;
   }
 }
+
+@media (max-width: 995px) {
+  .like-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-content {
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+
+  .home-img img {
+    width: 60vw;
+  }
+}
+
 
 /* Servie / My experience section */
 .services {
@@ -486,6 +551,30 @@ html::-webkit-scrollbar-thumb{
   }
   
 }
+
+.skill-category {
+  background-color: #fff;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+  text-align: left;
+  border-bottom: 2px solid var(--main-color);
+  padding-bottom: 0.5rem;
+}
+
+.skills .container .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
 
 /* EDUCSTION AND EXPERIENCE */
 .education {
