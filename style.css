@@ -288,7 +288,7 @@ html::-webkit-scrollbar-thumb{
   .btn {
     display: block;
     padding: 1rem 0.8rem; /* Adjusted padding value */
-    background: var(--bg-color);
+    /* background: var(--bg-color); */
     border-radius: 1rem;
     font-size: 1.6rem;
     color: var(--main-color);
