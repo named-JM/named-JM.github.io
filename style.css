@@ -716,7 +716,7 @@ html::-webkit-scrollbar-thumb{
 
 
 .skills .container .bar .info i {
-  font-size: 5.5rem;
+  font-size: 3.5rem;
   color: black; /* or white */
   margin-bottom: 0.5rem;
   display: block;
@@ -724,7 +724,7 @@ html::-webkit-scrollbar-thumb{
 
 /* text skills (python etc.. */
 .skills .container .bar .info span{
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   margin-left: 0.5rem;
 }
