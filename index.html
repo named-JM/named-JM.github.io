@@ -9,17 +9,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
   </head>
+  
   <body>
     <!-- logo,navbar, burger -->
     <header class="header">
       <a href="#" class="logo">JM Caguco</a>
+      <button id="dark-mode-toggle"  style="width: auto;" class="btn">
+        <i class="fas fa-moon"></i>
+      </button>
       <i class="fa-solid fa-bars" id="menu-icon"></i>
+      
       <nav class="navbar">
         <a href="#home" class="active">Home</a>
         <a href="#services">Works</a>
         <a href="#skills">Skills</a>
         <a href="#education">Triple E's</a>
         <!-- <a href="#contact">Contact</a> -->
+      
+        
       </nav>
     </header>
 
@@ -350,7 +357,21 @@
         swal("⚠️ Under Maintenance", "This page is currently being updated.", "info");
       };
     </script>
-    
+      <script>
+        const toggleBtn = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+      
+        toggleBtn.addEventListener('click', () => {
+          body.classList.toggle('dark-mode');
+      
+          // Optional: change button icon
+          const icon = toggleBtn.querySelector('i');
+          if (icon) {
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+          }
+        });
+      </script>
     
   </body>
   </html>
