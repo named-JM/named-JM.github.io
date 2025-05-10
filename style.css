@@ -463,11 +463,13 @@ html::-webkit-scrollbar-thumb{
 
 
 /* Servie / My experience section */
+/* push the works section down by an extra 3rem */
 .services {
-  
-  background: var(--bg-color);
-
+  margin-top: 3rem;
+  position: relative;  /* helps establish its own stacking context */
+  z-index: 1;
 }
+
 
 .service-container {
   display: grid;
