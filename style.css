@@ -352,6 +352,53 @@ html::-webkit-scrollbar-thumb{
     width: 60vw;
   }
 }
+@media (max-width: 400px) {
+
+  .like-box .home-content {
+    min-width: 250px;
+    
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+  .like-box {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .home-content {
+    flex:none;
+    padding-left: 0;
+    padding-top: 2rem;
+    text-align: center;
+  }
+  
+  .home-content h1 {
+    font-size: 3rem;
+  }
+
+  .home-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .home-content p {
+    font-size: 1.5rem;
+  }
+
+  .home-img img {
+    width: 50vw;
+  }
+
+
+
+  .btn {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+
+}
 
 
 /* Servie / My experience section */
@@ -572,7 +619,8 @@ html::-webkit-scrollbar-thumb{
     width: 100%; /*max width ng screen to make the container max it too*/
   }
   
-}    
+}
+
 
 
 /* EDUCSTION AND EXPERIENCE */
