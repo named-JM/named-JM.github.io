@@ -290,10 +290,10 @@ html::-webkit-scrollbar-thumb{
     display: block;
     padding: 1rem 0.8rem; /* Adjusted padding value */
     /* background: var(--bg-color); */
-    border-radius: 1rem;
+    border-radius: 50rem;
     font-size: 1.6rem;
     color: var(--main-color);
-    width: 27rem;
+    width: 9rem;
     letter-spacing: 0.1rem;
     font-weight: 600;
     transition: 0.5s ease-out;

@@ -12,23 +12,25 @@
   
   <body>
     <!-- logo,navbar, burger -->
-    <header class="header">
-      <a href="#" class="logo">JM Caguco</a>
-      <button id="dark-mode-toggle"  style="width: auto;" class="btn">
+  
+  <header class="header">
+    <a href="#" class="logo">JM Caguco</a>
+    
+    <div class="nav-right">
+      <button id="dark-mode-toggle" class="btn" aria-label="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
       </button>
       <i class="fa-solid fa-bars" id="menu-icon"></i>
-      
-      <nav class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#services">Works</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Triple E's</a>
-        <!-- <a href="#contact">Contact</a> -->
-      
-        
-      </nav>
-    </header>
+    </div>
+    
+    <nav class="navbar" id="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#services">Works</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Triple E's</a>
+    </nav>
+  </header>
+
 
     <!-- home me intro -->
     <section class="home" id="home">
@@ -134,7 +136,7 @@
             <div class="row">
               <div class="bar"><div class="info"><i class="fas fa-code"></i><span>VS Code</span></div></div>
               <!--<div class="bar"><div class="info"><i class="fas fa-terminal"></i><span>Android Studio</span></div></div> -->
-             <!-- visual studio   -->
+              <!-- visual studio   -->
               <div class="bar"><div class="info"><i class="fas fa-code"></i><span>Visual Studio</span></div></div>
               <div class="bar"><div class="info"><i class="fas fa-cogs"></i><span>Arduino IDE</span></div></div>
               <div class="bar"><div class="info"><i class="fas fa-code"></i><span>NetBeans</span></div></div>
@@ -164,32 +166,37 @@
     
          <!-- Service Box 1 -->
         <div class="service-box">
+           <a href="https://github.com/named-JM/Genshin-Lyre-" target="_blank">
           <img src="assets/pictures_works/LyreMobile.png" alt="">
           <div class="overlay">
             <h1>Genshin Lyre Feature Clone</h1>
             <p>A Flutter-based clone of Genshin Impact's in-game lyre feature, allowing users to play notes and melodies interactively.</p>
-            <a href="https://github.com/named-JM/Genshin-Lyre-" target="_blank">View Project</a>
+           
           </div>
           <div class="tools-used">
             <p>Tools Used: Flutter, Dart</p>
           </div>
+          </a>
         </div>
           <!-- Service Box 2 -->
         <div class="service-box">
+           <a href="https://github.com/named-JM/JARKING" target="_blank">
           <img src="assets/pictures_works/JARKING.png" alt="">
           <div class="overlay">
             <h1>JarKing Mobile App</h1>
             <p>A multipurpose Flutter app featuring Firebase authentication, built-in mini-games, music player, and CRUD functionalities.</p>
-            <a href="https://github.com/named-JM/JARKING" target="_blank">View Project</a>
+           
           </div>
           <div class="tools-used">
             <p>Tools Used: Flutter, Dart, Firebase</p>
           </div>
+          </a>
         </div>
 
 
         <!-- Service Box 3 -->
         <div class="service-box">
+
           <img src="assets/pictures_works/aims_inv.png" alt="">
           <div class="overlay">
             <h1>Pharmacy QR Inventory System</h1>
@@ -200,36 +207,59 @@
             <p>Tools Used: Flutter, Dart, PHP, Provider, MySQL, cPanel, Hive</p>
             </div>
         </div>
+         <!-- Service Box 6 -->
+          <div class="service-box">
+          <a href="https://drive.google.com/uc?export=download&id=1wMX_qpVm7tdkMKWd8tT3udgx-G56ch1f" target="_blank">
+          <img src="assets/pictures_works/phone.png" alt="">
+          <div class="overlay">
+            <h1>SOMO - Soil Moisture Monitoring</h1>
+            <p>A Thesis Prortotype for our School End using Flutter Framework, Firebase and Arduino.</p>
+            
+          </div>
+           <div class="tools-used">
+            <p>Tools Used: Flutter, Provider, Firebase, Arduino</p>
+          </div>
+          </a>
+        </div>
         
         <!-- Service Box 4 -->
         <div class="service-box">
+          <a href="pages/pubmats.html" target="_blank">
           <img src="pages/pubmats/Cavite Day via JM.png" alt="">
           <div class="overlay">
             <h1>Publication Materials & Designs</h1>
             <p>A collection of my creative works from organizational publications and personal design projects.</p>
-            <a href="pages/pubmats.html" target="_blank">View Gallery</a>
+            
           </div>
+          
           <div class="tools-used">
             <p>Tools Used: Photoshop, Canva, Figma</p>
           </div>
+          </a>
         </div>
-    
+        <!-- Service Box 5 -->
         <div class="service-box">
+          <a href="certs.html" target="_blank">
           <img src="assets/certficates/IOT DICT CERT JOANNA CAGUCO_page-0001.jpg" alt="">
           <div class="overlay">
             <h1>Certifications</h1>
             <p>Certificates from tech-related training, seminars, and community programs I’ve attended and completed.</p>
-            <a href="certs.html" target="_blank">View Certificates</a>
           </div>
+          </a>
         </div>
-    
-        <div class="service-box">
+       
+        
+     
+        <!-- Service Box 7 -->
+           <div class="service-box">
+           <a href="https://github.com/named-JM?tab=repositories" target="_blank">
           <img src="assets/icons/github.jpg" alt="">
           <div class="overlay">
             <h1>Other Projects</h1>
             <p>A showcase of my experimental and learning projects built with Java, PHP/MySQL, and Android Studio.</p>
-            <a href="https://github.com/named-JM?tab=repositories" target="_blank">View All</a>
+           
           </div>
+          </a>
         </div>
     
       </div>
@@ -245,7 +275,7 @@
               <h2>Mobile App Developer Freelancer</h2>
             </div>
             <div class="decs">
-              <p>NueralCore<br> November 2024 - Current <br> </p>
+              <p>NueralCore<br> November 2024 - March 2025 <br> </p>
             </div>
           </div>
         </div>
@@ -344,7 +374,6 @@
       </ul> -->
       <p class="copyright">
         @ JM Caguco ||</a>
-      <br>I tweak it with my own design color</p>
     </footer>
   </div>
     <script src="new.js"></script>
@@ -372,6 +401,7 @@
           }
         });
       </script>
+      
     
   </body>
   </html>
