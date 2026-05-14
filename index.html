@@ -1,414 +1,853 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JM Caguco</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    
-  </head>
-  
-  <body>
-    <!-- logo,navbar, burger -->
-  
-  <header class="header">
-    <a href="#" class="logo">JM Caguco</a>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JM Caguco — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
+  <style>
+    :root {
+      --white: #FAFAFA;
+      --off-white: #F4F2F8;
+      --purple-soft: #C4B5D9;
+      --purple-mid: #9B84C4;
+      --purple-deep: #6B52A8;
+      --purple-pale: #EDE8F5;
+      --purple-mist: #F8F5FD;
+      --text-dark: #1C1720;
+      --text-mid: #4A4257;
+      --text-light: #8A7FA0;
+      --border: #E8E2F2;
+      --shadow: 0 2px 24px rgba(107, 82, 168, 0.06);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 5%;
+      background: rgba(250,250,250,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+
+    header.scrolled { box-shadow: var(--shadow); }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--purple-deep);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    nav { display: flex; gap: 2.2rem; align-items: center; }
+
+    nav a {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-mid);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--purple-mid);
+      transition: width 0.3s;
+    }
+
+    nav a:hover { color: var(--purple-deep); }
+    nav a:hover::after { width: 100%; }
+
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+
+    #dark-mode-toggle {
+      background: none; border: none; cursor: pointer;
+      color: var(--text-light); font-size: 1rem;
+      padding: 0.3rem; transition: color 0.2s;
+    }
+    #dark-mode-toggle:hover { color: var(--purple-deep); }
+
+    #menu-icon { display: none; cursor: pointer; font-size: 1.2rem; color: var(--text-mid); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 5% 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, var(--purple-pale) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: 10%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, #e8e2f560 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .hero-text { animation: fadeUp 0.8s ease both; }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      background: var(--purple-pale);
+      padding: 0.35rem 0.9rem;
+      border-radius: 99px;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-text h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-text h1 span { color: var(--purple-deep); }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--text-mid);
+      margin-bottom: 0.8rem;
+      font-weight: 400;
+    }
+
+    .hero-desc {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      max-width: 440px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.75rem 1.8rem;
+      background: var(--purple-deep);
+      color: #fff;
+      border-radius: 99px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--purple-mid); transform: translateY(-1px); }
+
+    .socials { display: flex; gap: 1rem; }
+    .socials a {
+      color: var(--text-light);
+      font-size: 1.15rem;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .socials a:hover { color: var(--purple-deep); transform: translateY(-2px); }
+
+    /* Hero image */
+    .hero-image { animation: fadeUp 0.8s 0.2s ease both; display: flex; justify-content: center; }
+
+    .img-frame {
+      position: relative;
+      width: 320px; height: 380px;
+    }
+
+    .img-frame::before {
+      content: '';
+      position: absolute;
+      inset: -10px -10px 10px 10px;
+      border: 1.5px solid var(--purple-soft);
+      border-radius: 20px;
+      z-index: 0;
+    }
+
+    .img-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      position: relative;
+      z-index: 1;
+      display: block;
+    }
+
+    .img-placeholder {
+      width: 100%; height: 100%;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--purple-pale) 0%, var(--off-white) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .img-placeholder i { font-size: 3rem; color: var(--purple-soft); }
+    .img-placeholder p { font-size: 0.8rem; color: var(--text-light); }
+
+    /* ─── SECTION SHARED ─── */
+    section { padding: 5.5rem 5%; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--text-dark);
+      margin-bottom: 3rem;
+      line-height: 1.2;
+    }
+
+    .section-center { text-align: center; }
+
+    /* ─── WORKS ─── */
+    .works { background: var(--purple-mist); }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .work-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .work-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(107,82,168,0.1);
+    }
+
+    .work-thumb {
+      height: 180px;
+      background: linear-gradient(135deg, var(--purple-pale) 0%, var(--off-white) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .work-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .work-card:hover .work-thumb img { transform: scale(1.04); }
+
+    .work-thumb-icon { font-size: 2.5rem; color: var(--purple-soft); }
+
+    .work-body { padding: 1.4rem 1.6rem 1.6rem; }
+
+    .work-tag {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      margin-bottom: 0.4rem;
+    }
+
+    .work-body h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .work-body p {
+      font-size: 0.83rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .work-tools {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      background: var(--purple-mist);
+      padding: 0.35rem 0.75rem;
+      border-radius: 99px;
+      display: inline-block;
+    }
+
+    .work-arrow {
+      float: right;
+      color: var(--purple-mid);
+      font-size: 0.8rem;
+      margin-top: -1.6rem;
+    }
+
+    /* ─── SKILLS ─── */
+    .skills-wrap { max-width: 1000px; margin: 0 auto; }
+
+    .skill-group { margin-bottom: 2.5rem; }
+
+    .skill-group h3 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple-deep);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      font-weight: 400;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .pill:hover {
+      background: var(--purple-pale);
+      border-color: var(--purple-soft);
+      color: var(--purple-deep);
+    }
+
+    .pill i { font-size: 0.85rem; color: var(--purple-soft); }
+
+    /* ─── TIMELINE ─── */
+    .timeline-section { background: var(--purple-mist); }
+
+    .timeline-wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline-wrap::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .tl-item {
+      position: relative;
+      margin-bottom: 2.4rem;
+      padding-left: 1.6rem;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -0.37rem; top: 0.45rem;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--purple-soft);
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 1px var(--purple-soft);
+    }
+
+    .tl-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      background: var(--purple-pale);
+      padding: 0.2rem 0.65rem;
+      border-radius: 99px;
+      margin-bottom: 0.4rem;
+    }
+
+    .tl-item h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-bottom: 0.2rem;
+    }
+
+    .tl-item p {
+      font-size: 0.83rem;
+      color: var(--text-light);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 2.5rem 5%;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer .logo { font-size: 1rem; }
+
+    footer .socials a { font-size: 1rem; }
+
+    footer p {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    /* ─── DARK MODE ─── */
+    body.dark-mode {
+      --white: #14111C;
+      --off-white: #1C1826;
+      --purple-pale: #241E33;
+      --purple-mist: #1A1626;
+      --border: #2E2840;
+      --text-dark: #F0EDF8;
+      --text-mid: #B8ADCE;
+      --text-light: #7A6E96;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── MOBILE NAV ─── */
+    @media (max-width: 768px) {
+      #menu-icon { display: block; }
+      nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(250,250,250,0.97);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        z-index: 99;
+      }
+      nav a { font-size: 1.2rem; }
+      nav.open { display: flex; }
+      body.dark-mode nav { background: rgba(20,17,28,0.97); }
+
+      .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
+      .hero-image { order: -1; }
+      .img-frame { width: 200px; height: 240px; }
+      .hero-actions { justify-content: center; }
+      .hero-desc { margin: 0 auto 2rem; }
+
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <a href="#home" class="logo">JM Caguco</a>
     <div class="nav-right">
-      <button id="dark-mode-toggle" class="btn" aria-label="Toggle Dark Mode">
-        <i class="fas fa-moon"></i>
-      </button>
+      <button id="dark-mode-toggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
       <i class="fa-solid fa-bars" id="menu-icon"></i>
     </div>
-    
-    <nav class="navbar" id="navbar">
-      <a href="#home" class="active">Home</a>
-      <a href="#services">Works</a>
+    <nav id="navbar">
+      <a href="#home">Home</a>
+      <a href="#works">Works</a>
       <a href="#skills">Skills</a>
-      <a href="#education">Triple E's</a>
+      <a href="#triple-e">Journey</a>
     </nav>
   </header>
 
-
-    <!-- home me intro -->
-    <section class="home" id="home">
-      <div class="like-box">
-        <!-- Home Me Contents -->
-        <div class="home-img">
-          <img src="assets/pictures_works/IMG_1160.JPG" alt="JM Picture" >
-        </div>
-
-        <div class="home-content">
-          <h1>Hello! My name's <span>JM!</span></h1>
-<!--           <h3 class="typing-text">I'm a <span>Graduating Computer Science Student</span> and currently a <span>Mobile App Dev Freelancer</span></h3> -->
-          <h3 class="typing-text">I'm a <span>Graduating Computer Science Student</span>  </h3>
-          <p>with a wide array of skills and interest. From designing, building, coding and troubleshooting, <br>I love diving into different aspects of technology.</p>
-          <p>I'm particularly passionate about tech industry, media industry, gaming industry</p>
-        
-          <div class="socials" id="icons">
-            <a href="https://www.facebook.com/JM.cags" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-            <a href="https://www.linkedin.com/in/joannacaguco/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/named-JM" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-            <a href="https://twitter.com/JMappear/media" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="hero-label">Computer Science Graduate</span>
+        <h1>Hi, I'm <span>JM</span> Caguco.</h1>
+        <p class="hero-sub">Mobile App Dev · Web Dev · Designer</p>
+        <p class="hero-desc">From designing and building to coding and troubleshooting — I love exploring every corner of tech, media, and gaming.</p>
+        <div class="hero-actions">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joannacaguco@gmail.com" target="_blank" class="btn-primary">Get in touch</a>
+          <div class="socials">
+            <a href="https://www.facebook.com/JM.cags" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/joannacaguco/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/named-JM" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://twitter.com/JMappear/media" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
           </div>
-    
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joannacaguco@gmail.com" target="_blank" class="btn">joannacaguco@gmail.com</a>
         </div>
       </div>
-    </section>
-
-
-      <!-- tools -->
-      <section class="skills" id="skills">
-        <h2 class="heading">My Knowledge and Learnings</h2>
-        <br><br><br>
-        <div class="container">
-      
-          <div class="skill-category">
-            <h3>Web Development</h3>
-            <div class="row">
-              <div class="bar"><div class="info"><i class="fab fa-html5"></i><span>HTML</span></div></div>
-              <div class="bar"><div class="info"><i class="fab fa-css3-alt"></i><span>CSS</span></div></div>
-              <!-- tailwind -->
-              <div class="bar"><div class="info"><i class="fab fa-clipboard-list"></i><span>Tailwind</span></div></div>
-              <div class="bar"><div class="info"><i class="fab fa-js"></i><span>JavaScript</span></div></div>
-              <div class="bar"><div class="info"><i class="fab fa-php"></i><span>PHP</span></div></div>
-              <div class="bar"><div class="info"><i class="fas fa-database"></i><span>MySQL</span></div></div>
-            </div>
+      <div class="hero-image">
+        <div class="img-frame">
+          <div class="img-placeholder">
+            <i class="fa-solid fa-user"></i>
+            <p>JM Caguco</p>
           </div>
-      
-          <div class="skill-category">
-            <h3>Mobile App Development</h3>
-            <div class="row">
-              <div class="bar"><div class="info"><i class="fas fa-mobile-alt"></i><span>Flutter</span></div></div>
-              <!-- <div class="bar"><div class="info"><i class="fab fa-android"></i><span>Android Studio</span></div></div>
-              <div class="bar"><div class="info"><i class="fab fa-java"></i><span>Java</span></div></div> -->
-              <!-- <div class="bar"><div class="info"><i class="fab fa-react"></i><span>React Native</span></div></div> -->
-              <!-- php,mysql, hive-->
-              <div class="bar"><div class="info"><i class="fab fa-php"></i><span>PHP</span></div></div>
-              <div class="bar"><div class="info"><i class="fas fa-database"></i><span>MySQL</span></div></div>
-              <div class="bar"><div class="info"><i class="fas fa-database"></i><span>Hive</span></div></div>
-              <div class="bar"><div class="info"><i class="fas fa-fire"></i><span>Firebase</span></div></div>
-            </div>
-          </div>
-      
-          <div class="skill-category">
-            <h3>Game Development</h3>
-            <div class="row">
-              <div class="bar"><div class="info"><i class="fab fa-unity"></i><span>Unity</span></div></div>
-            </div>
-          </div>
-      
-          <div class="skill-category">
-            <h3>Design & Media</h3>
-            <div class="row">
-              <!-- ADD photoshop -->
-              <div class="bar"><div class="info"><i class="fab fa-clipboard-list"></i><span>Photoshop</span></div></div>
-              <div class="bar"><div class="info"><i class="fas fa-palette"></i><span>Canva</span></div></div>
-              <div class="bar"><div class="info"><i class="fas fa-video"></i><span>Premiere</span></div></div>
-              <div class="bar"><div class="info"><i class="fas fa-film"></i><span>DaVinci</span></div></div>
-              <div class="bar"><div class="info"><i class="fab fa-figma"></i><span>Figma</span></div></div>
-              <div class="bar"><div class="info"><i class="fas fa-cube"></i><span>Blender</span></div></div>
-            </div>
-          </div>
-      
-          <div class="skill-category">
-            <h3>Version Control / Repository Hosting</h3>
-            <div class="row">
-              <div class="bar"><div class="info"><i class="fab fa-github"></i><span>GitHub</span></div></div>
-              <div class="bar"><div class="info"><i class="fab fa-git"></i><span>Git</span></div></div>
-              <!-- <div class="bar"><div class="info"><i class="fas fa-code-branch"></i><span>GitLab</span></div></div> -->
-            </div>
-          </div>
-      
-          <div class="skill-category">
-            <h3>Productivity & Collaboration</h3>
-            <div class="row">
-              <div class="bar"><div class="info"><i class="fas fa-clipboard-list"></i><span>Trello</span></div></div>
-              <div class="bar"><div class="info"><i class="fas fa-sticky-note"></i><span>Notion</span></div></div>
-              <div class="bar"><div class="info"><i class="fab fa-github"></i><span>GitHub</span></div></div>
-            </div>
-          </div>
-      
-          <div class="skill-category">
-            <h3>Tools & IDEs</h3>
-            <div class="row">
-              <div class="bar"><div class="info"><i class="fas fa-code"></i><span>VS Code</span></div></div>
-              <!--<div class="bar"><div class="info"><i class="fas fa-terminal"></i><span>Android Studio</span></div></div> -->
-              <!-- visual studio   -->
-              <div class="bar"><div class="info"><i class="fas fa-code"></i><span>Visual Studio</span></div></div>
-              <div class="bar"><div class="info"><i class="fas fa-cogs"></i><span>Arduino IDE</span></div></div>
-              <div class="bar"><div class="info"><i class="fas fa-code"></i><span>NetBeans</span></div></div>
-            </div>
-          </div>
-      
-          <div class="skill-category">
-            <h3>Others</h3>
-            <div class="row">
-              <!-- <div class="bar"><div class="info"><i class="fab fa-python"></i><span>Python</span></div></div> -->
-              <div class="bar"><div class="info"><i class="fas fa-microchip"></i><span>Arduino</span></div></div>
-              <div class="bar"><div class="info"><i class="fas fa-file-word"></i><span>MS Office</span></div></div>
-            </div>
-          </div>
-      
+          <!-- Replace placeholder with: <img src="assets/pictures_works/IMG_1160.JPG" alt="JM Caguco"> -->
         </div>
-      </section>
-      
-
-
-    
-    <!-- works -->
-    
-    <section class="services" id="services">
-      <h2 class="heading">Works</h2>
-      <div class="service-container">
-    
-         <!-- Service Box 1 -->
-        <div class="service-box">
-           
-          <img src="assets/pictures_works/LyreMobile.png" alt="">
-          <a href="https://github.com/named-JM/Genshin-Lyre-" target="_blank"></a>
-          <div class="overlay">
-            <h1>Genshin Lyre Feature Clone</h1>
-            <p>A Flutter-based clone of Genshin Impact's in-game lyre feature, allowing users to play notes and melodies interactively.</p>
-           
-          </div>
-          <div class="tools-used">
-            <p>Tools Used: Flutter, Dart</p>
-          </div>
-          </a>
-        </div>
-          <!-- Service Box 2 -->
-        <div class="service-box">
-           
-          <img src="assets/pictures_works/JARKING.png" alt="">
-          <a href="https://github.com/named-JM/JARKING" target="_blank">
-          <div class="overlay">
-            <h1>JarKing Mobile App</h1>
-            <p>A multipurpose Flutter app featuring Firebase authentication, built-in mini-games, music player, and CRUD functionalities.</p>
-           
-          </div>
-          <div class="tools-used">
-            <p>Tools Used: Flutter, Dart, Firebase</p>
-          </div>
-          </a>
-        </div>
-
-
-        <!-- Service Box 3 -->
-        <div class="service-box">
-
-          <img src="assets/pictures_works/aims_inv.png" alt="">
-          <div class="overlay">
-            <h1>Pharmacy QR Inventory System</h1>
-            <p>A client project for a pharmacy in Bulacan: a Flutter app with offline inventory tracking, QR scanning, and sync-to-online capabilities.</p>
-            <!-- <a href="#" target="_blank">View Project</a> -->
-          </div> 
-            <div class="tools-used">
-            <p>Tools Used: Flutter, Dart, PHP, Provider, MySQL, cPanel, Hive</p>
-            </div>
-        </div>
-         <!-- Service Box 6 -->
-          <div class="service-box">
-          
-          <img src="assets/pictures_works/phone.png" alt="">
-          <a href="https://drive.google.com/uc?export=download&id=1wMX_qpVm7tdkMKWd8tT3udgx-G56ch1f" target="_blank">
-          <div class="overlay">
-            <h1>SOMO - Soil Moisture Monitoring</h1>
-            <p>A Thesis Prortotype for our School End using Flutter Framework, Firebase and Arduino.</p>
-            
-          </div>
-           <div class="tools-used">
-            <p>Tools Used: Flutter, Provider, Firebase, Arduino</p>
-          </div>
-          </a>
-        </div>
-        
-        <!-- Service Box 4 -->
-        <div class="service-box">
-          
-          <img src="pages/pubmats/Cavite Day via JM.png" alt="">
-          <a href="pages/pubmats.html" target="_blank">
-          <div class="overlay">
-            <h1>Publication Materials & Designs</h1>
-            <p>A collection of my creative works from organizational publications and personal design projects.</p>
-            
-          </div>
-          
-          <div class="tools-used">
-            <p>Tools Used: Photoshop, Canva, Figma</p>
-          </div>
-          </a>
-        </div>
-        <!-- Service Box 5 -->
-        <div class="service-box">
-          
-          <img src="assets/certficates/IOT DICT CERT JOANNA CAGUCO_page-0001.jpg" alt="">
-          <a href="certs.html" target="_blank">
-          <div class="overlay">
-            <h1>Certifications</h1>
-            <p>Certificates from tech-related training, seminars, and community programs I’ve attended and completed.</p>
-          </div>
-          </a>
-        </div>
-       
-        
-     
-        <!-- Service Box 7 -->
-           <div class="service-box">
-           
-          <img src="assets/icons/github.jpg" alt="">
-          <a href="https://github.com/named-JM?tab=repositories" target="_blank">
-          <div class="overlay">
-            <h1>Other Projects</h1>
-            <p>A showcase of my experimental and learning projects built with Java, PHP/MySQL, and Android Studio.</p>
-           
-          </div>
-          </a>
-        </div>
-    
       </div>
-    </section>
-    
-    <!-- EDUCATION -->
-    <section class="education" id="education">
-      <h2 class="heading">Triple E's<br>Education, Experience, Extracurricular</h2>
-      <div class="timeline">
-        <div class="container right">
-          <div class="content">
-            <div class="tag">
-              <h2>Mobile App Developer Freelancer</h2>
-            </div>
-            <div class="decs">
-              <p>NueralCore<br> November 2024 - March 2025 <br> </p>
-            </div>
-          </div>
-        </div>
-        <div class="container left">
-          <div class="content">
-            <div class="tag">
-              <h2>Junior Web Developer</h2>
-            </div>
-            <div class="decs">
-              <p>HR Primo<br>July - September 2024</p>
-            </div>
-          </div>
-        </div>
-        <div class="container right">
-          <div class="content">
-            <div class="tag">
-              <h2>BS Computer Science</h2>
-            </div>
-            <div class="decs">
-              <p>City College of Tagaytay <br> 2021-2025 <br> </p>
-            </div>
-          </div>
-        </div>
-        <div class="container left">
-          <div class="content">
-            <div class="tag">
-          <h2>Multimedia Graphics Artist</h2>
-            </div>
-            <div class="decs">
-              <p>Official Student Publication of City College of Tagaytay <br>Aug 2023 - Present</p>
-            
-            </div>
-          </div>
-        </div>
-         <div class="container right">
-          <div class="content">
-            <div class="tag">
-              <h2>Graphic Artist Volunteer</h2>
-            </div>
-            <div class="decs">
-              <p>Foundation Event of City College of Tagaytay <br>Oct 2022 - Dec 2022</p>
-            </div>
-          </div>
-        </div>
-        <div class="container left">
-          <div class="content">
-            <div class="tag">
-              <h2>Small Business Manager</h2>
-            </div>
-            <div class="decs">
-              <p>Inksight Works <br> Jul 2020 - Sep 2023</p>
-            </div>
-          </div>
-        </div>
-       
-          <div class="container right">
-          <div class="content">
-            <div class="tag">
-                 <h2>STEM</h2>
-             
-            </div>
-            <div class="decs">
-                <p>Holy Nazarene Christian School <br>2019-2021</p>
-        
-            </div>
-          </div>
-        </div>
-      
-      </div>
-    </section>
-<!-- 
-    <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me</span></h2>
-      <form action="">
-        <div class="input-box">
-          <input type="text" name="name" placeholder="Name" required>
-        </div>
-      </form>
-    </section> -->
+    </div>
+  </section>
 
-    <!-- footer -->
-    <footer class="footer">
-      <div class="social">
-        <a href="https://www.linkedin.com/in/joannacaguco/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/named-JM" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-        <a href="https://twitter.com/JMappear/media" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
-        <a href="https://www.facebook.com/JM.cags" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-        <a href="https://www.youtube.com/channel/UCbwys7X5LxMFgqPi0ZZUZJw"><i class="fa-brands fa-square-youtube"></i></a>
+  <!-- WORKS -->
+  <section class="works" id="works">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="reveal">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title">Selected Works</h2>
       </div>
-      <!-- <ul class="list">
-        <li><a href="#">FAQ</a></li>
-        <li><a href="">Service</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Contact</a></li>
-        <li><a href="">Privacy Policy</a></li>
-      </ul> -->
-      <p class="copyright">
-        @ JM Caguco ||</a>
-    </footer>
-  </div>
-    <script src="new.js"></script>
-    <script src="https://tools.refokus.com/slider-generator/bundle.v1.0.0.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      <div class="works-grid reveal">
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
-      window.onload = function() {
-        swal("⚠️ Under Maintenance", "This page is currently being updated.", "info");
-      };
-    </script>
-      <script>
-        const toggleBtn = document.getElementById('dark-mode-toggle');
-        const body = document.body;
-      
-        toggleBtn.addEventListener('click', () => {
-          body.classList.toggle('dark-mode');
-      
-          // Optional: change button icon
-          const icon = toggleBtn.querySelector('i');
-          if (icon) {
-            icon.classList.toggle('fa-moon');
-            icon.classList.toggle('fa-sun');
-          }
-        });
-      </script>
-      
-    
-  </body>
-  </html>
+        <a class="work-card" href="https://github.com/named-JM/Genshin-Lyre-" target="_blank">
+          <div class="work-thumb"><i class="work-thumb-icon fas fa-music"></i></div>
+          <div class="work-body">
+            <p class="work-tag">Mobile · Flutter</p>
+            <h3>Genshin Lyre Clone</h3>
+            <p>A Flutter-based clone of Genshin Impact's in-game lyre, letting users play notes and melodies interactively.</p>
+            <span class="work-tools">Flutter · Dart</span>
+            <span class="work-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+          </div>
+        </a>
+
+        <a class="work-card" href="https://github.com/named-JM/JARKING" target="_blank">
+          <div class="work-thumb"><i class="work-thumb-icon fas fa-gamepad"></i></div>
+          <div class="work-body">
+            <p class="work-tag">Mobile · Flutter</p>
+            <h3>JarKing Mobile App</h3>
+            <p>A multipurpose app with Firebase auth, built-in mini-games, music player, and full CRUD functionalities.</p>
+            <span class="work-tools">Flutter · Dart · Firebase</span>
+            <span class="work-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+          </div>
+        </a>
+
+        <div class="work-card">
+          <div class="work-thumb"><i class="work-thumb-icon fas fa-qrcode"></i></div>
+          <div class="work-body">
+            <p class="work-tag">Client Project · Flutter</p>
+            <h3>Pharmacy QR Inventory System</h3>
+            <p>Flutter app with offline inventory tracking, QR scanning, and online sync for a pharmacy in Bulacan.</p>
+            <span class="work-tools">Flutter · PHP · MySQL · Hive</span>
+          </div>
+        </div>
+
+        <a class="work-card" href="https://drive.google.com/uc?export=download&id=1wMX_qpVm7tdkMKWd8tT3udgx-G56ch1f" target="_blank">
+          <div class="work-thumb"><i class="work-thumb-icon fas fa-seedling"></i></div>
+          <div class="work-body">
+            <p class="work-tag">Thesis · IoT</p>
+            <h3>SOMO — Soil Moisture Monitor</h3>
+            <p>A thesis prototype using Flutter, Firebase, and Arduino to monitor soil moisture in real time.</p>
+            <span class="work-tools">Flutter · Firebase · Arduino</span>
+            <span class="work-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+          </div>
+        </a>
+
+        <a class="work-card" href="pages/pubmats.html" target="_blank">
+          <div class="work-thumb"><i class="work-thumb-icon fas fa-pen-nib"></i></div>
+          <div class="work-body">
+            <p class="work-tag">Design</p>
+            <h3>Publication Materials</h3>
+            <p>A collection of creative works from organizational publications and personal design projects.</p>
+            <span class="work-tools">Photoshop · Canva · Figma</span>
+            <span class="work-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+          </div>
+        </a>
+
+        <a class="work-card" href="certs.html" target="_blank">
+          <div class="work-thumb"><i class="work-thumb-icon fas fa-certificate"></i></div>
+          <div class="work-body">
+            <p class="work-tag">Credentials</p>
+            <h3>Certifications</h3>
+            <p>Certificates from tech training, seminars, and community programs I've attended and completed.</p>
+            <span class="work-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+          </div>
+        </a>
+
+        <a class="work-card" href="https://github.com/named-JM?tab=repositories" target="_blank">
+          <div class="work-thumb"><i class="work-thumb-icon fa-brands fa-github"></i></div>
+          <div class="work-body">
+            <p class="work-tag">Open Source</p>
+            <h3>Other Projects</h3>
+            <p>Experimental and learning projects built with Java, PHP/MySQL, and Android Studio.</p>
+            <span class="work-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="skills-wrap">
+      <div class="reveal">
+        <span class="section-label">Toolbox</span>
+        <h2 class="section-title">Skills &amp; Technologies</h2>
+      </div>
+
+      <div class="reveal skill-group">
+        <h3>Web Development</h3>
+        <div class="skill-pills">
+          <span class="pill"><i class="fab fa-html5"></i> HTML</span>
+          <span class="pill"><i class="fab fa-css3-alt"></i> CSS</span>
+          <span class="pill"><i class="fab fa-js"></i> JavaScript</span>
+          <span class="pill"><i class="fas fa-wind"></i> Tailwind</span>
+          <span class="pill"><i class="fab fa-php"></i> PHP</span>
+          <span class="pill"><i class="fas fa-database"></i> MySQL</span>
+        </div>
+      </div>
+
+      <div class="reveal skill-group">
+        <h3>Mobile App Development</h3>
+        <div class="skill-pills">
+          <span class="pill"><i class="fas fa-mobile-alt"></i> Flutter</span>
+          <span class="pill"><i class="fab fa-php"></i> PHP</span>
+          <span class="pill"><i class="fas fa-database"></i> MySQL</span>
+          <span class="pill"><i class="fas fa-database"></i> Hive</span>
+          <span class="pill"><i class="fas fa-fire"></i> Firebase</span>
+        </div>
+      </div>
+
+      <div class="reveal skill-group">
+        <h3>Game Development</h3>
+        <div class="skill-pills">
+          <span class="pill"><i class="fab fa-unity"></i> Unity</span>
+        </div>
+      </div>
+
+      <div class="reveal skill-group">
+        <h3>Design &amp; Media</h3>
+        <div class="skill-pills">
+          <span class="pill"><i class="fas fa-wand-magic-sparkles"></i> Photoshop</span>
+          <span class="pill"><i class="fas fa-palette"></i> Canva</span>
+          <span class="pill"><i class="fas fa-video"></i> Premiere</span>
+          <span class="pill"><i class="fas fa-film"></i> DaVinci Resolve</span>
+          <span class="pill"><i class="fab fa-figma"></i> Figma</span>
+          <span class="pill"><i class="fas fa-cube"></i> Blender</span>
+        </div>
+      </div>
+
+      <div class="reveal skill-group">
+        <h3>Version Control</h3>
+        <div class="skill-pills">
+          <span class="pill"><i class="fab fa-github"></i> GitHub</span>
+          <span class="pill"><i class="fab fa-git-alt"></i> Git</span>
+        </div>
+      </div>
+
+      <div class="reveal skill-group">
+        <h3>Productivity &amp; Collaboration</h3>
+        <div class="skill-pills">
+          <span class="pill"><i class="fas fa-clipboard-list"></i> Trello</span>
+          <span class="pill"><i class="fas fa-sticky-note"></i> Notion</span>
+        </div>
+      </div>
+
+      <div class="reveal skill-group">
+        <h3>Tools &amp; IDEs</h3>
+        <div class="skill-pills">
+          <span class="pill"><i class="fas fa-code"></i> VS Code</span>
+          <span class="pill"><i class="fas fa-code"></i> Visual Studio</span>
+          <span class="pill"><i class="fas fa-cogs"></i> Arduino IDE</span>
+          <span class="pill"><i class="fas fa-code"></i> NetBeans</span>
+        </div>
+      </div>
+
+      <div class="reveal skill-group">
+        <h3>Others</h3>
+        <div class="skill-pills">
+          <span class="pill"><i class="fas fa-microchip"></i> Arduino</span>
+          <span class="pill"><i class="fas fa-file-word"></i> MS Office</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRIPLE E'S -->
+  <section class="timeline-section" id="triple-e">
+    <div style="max-width:700px;margin:0 auto;">
+      <div class="reveal">
+        <span class="section-label">Education · Experience · Extracurricular</span>
+        <h2 class="section-title">My Journey</h2>
+      </div>
+
+      <div class="timeline-wrap reveal">
+
+        <div class="tl-item">
+          <span class="tl-badge">Experience</span>
+          <h3>Mobile App Developer Freelancer</h3>
+          <p>NeuralCore &nbsp;·&nbsp; Nov 2024 – Mar 2025</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-badge">Experience</span>
+          <h3>Junior Web Developer</h3>
+          <p>HR Primo &nbsp;·&nbsp; Jul – Sep 2024</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-badge">Education</span>
+          <h3>BS Computer Science</h3>
+          <p>City College of Tagaytay &nbsp;·&nbsp; 2021 – 2025</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-badge">Extracurricular</span>
+          <h3>Multimedia Graphics Artist</h3>
+          <p>Official Student Publication, City College of Tagaytay &nbsp;·&nbsp; Aug 2023 – Present</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-badge">Extracurricular</span>
+          <h3>Graphic Artist Volunteer</h3>
+          <p>Foundation Event, City College of Tagaytay &nbsp;·&nbsp; Oct – Dec 2022</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-badge">Experience</span>
+          <h3>Small Business Manager</h3>
+          <p>Inksight Works &nbsp;·&nbsp; Jul 2020 – Sep 2023</p>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-badge">Education</span>
+          <h3>STEM</h3>
+          <p>Holy Nazarene Christian School &nbsp;·&nbsp; 2019 – 2021</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#home" class="logo">JM Caguco</a>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/joannacaguco/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://github.com/named-JM" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://twitter.com/JMappear/media" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.facebook.com/JM.cags" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.youtube.com/channel/UCbwys7X5LxMFgqPi0ZZUZJw" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+    <p>© 2025 JM Caguco</p>
+  </footer>
+
+  <script>
+    // Scroll header shadow
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile nav toggle
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.getElementById('navbar');
+    menuIcon.addEventListener('click', () => {
+      navbar.classList.toggle('open');
+      menuIcon.className = navbar.classList.contains('open')
+        ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    });
+    navbar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navbar.classList.remove('open');
+      menuIcon.className = 'fa-solid fa-bars';
+    }));
+
+    // Dark mode
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
